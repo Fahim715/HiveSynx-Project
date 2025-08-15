@@ -6,12 +6,16 @@ import { SocketIndicator } from "@/components/socket-indicator";
 
 import { ChatVideoButton } from "./chat-video-button";
 
+
+
 interface ChatHeaderProps {
   serverId: string;
   name: string;
   type: "channel" | "conversation";
   imageUrl?: string;
 }
+
+
 
 export const ChatHeader = ({
   serverId,
