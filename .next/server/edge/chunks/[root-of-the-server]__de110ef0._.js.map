@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 23, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/middleware.ts"],"sourcesContent":[" import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';\nimport { NextResponse } from 'next/server';\n\nconst isProtectedRoute = createRouteMatcher(['/api/uploadthing']);\n\nexport default clerkMiddleware((auth, request) => {\n  if (isProtectedRoute(request)) {\n    auth.protect();\n  }\n\n  return NextResponse.next();\n});\n\nexport const config = {\n  matcher: ['/((?!.*\\\\..*|_next).*)', '/', '/(api|trpc)(.*)'],\n};"],"names":[],"mappings":";;;;AAAC;AAAA;AACD;AAAA;;;AAEA,MAAM,mBAAmB,CAAA,GAAA,kLAAA,CAAA,qBAAkB,AAAD,EAAE;IAAC;CAAmB;uCAEjD,CAAA,GAAA,qLAAA,CAAA,kBAAe,AAAD,EAAE,CAAC,MAAM;IACpC,IAAI,iBAAiB,UAAU;QAC7B,KAAK,OAAO;IACd;IAEA,OAAO,6LAAA,CAAA,eAAY,CAAC,IAAI;AAC1B;AAEO,MAAM,SAAS;IACpB,SAAS;QAAC;QAA0B;QAAK;KAAkB;AAC7D"}}]
+}
